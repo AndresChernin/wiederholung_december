@@ -1,0 +1,40 @@
+Überprüfen sie bitte folgende funktion , die celsius ins fahrenheit umwandelt:
+def cel_to_fahr(cel):
+    return cel*1.8 +32
+
+wo liegt der Fehler in meinem Text vor?
+def read_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        return content
+    except FileNotFoundError:
+        return f"Die Datei {file_path} wurde nicht gefunden."
+    except Exception as e:
+        return f"Ein Fehler ist aufgetreten: {e}"
+
+file_path = 'faust.txt'
+file_content = read_file(file_path)
+
+if file_content:
+    print(file_content[:200])  # Drucke die ersten 200 Zeichen des Inhalts als Beispiel
+else:
+    print(f"Datei {file_path} konnte nicht gelesen werden.")
+def count_words(text,word):
+    text_lower=text.lower();
+    return text_lower.count(word.lower)
+
+print(str(count_words(file_content,"Faust"))+"-mal kommt das Wort 'Faust' vor")
+das ist die Meldung von Python :
+TypeError                                 Traceback (most recent call last)
+Cell In[3], line 5
+      2     text_lower=text.lower();
+      3     return text_lower.count(word.lower)
+----> 5 print(str(count_words(file_content,"Faust"))+"-mal kommt das Wort 'Faust vor")
+
+Cell In[3], line 3, in count_words(text, word)
+      1 def count_words(text,word):
+      2     text_lower=text.lower();
+----> 3     return text_lower.count(word.lower)
+
+TypeError: must be str, not builtin_function_or_method
